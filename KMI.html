@@ -1,0 +1,27 @@
+
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+<div style="border-color: black;background-color:ivory; border-style: double" data-ng-app="myApp" data-ng-cntrl="myCtrl">
+	<h1 style="text-align: center">KMI Skaiciuotuvas</h1>
+	<p>Svoris(kg):<input type="number" data-ng-model="weight"><br></p>
+	<p>Ugis(m):<input type="number" data-ng-model="height"><br></p>
+	<p  >KMI: {{ weight / (height * height) }} </p>
+	<p>
+		{{KMI()}}
+	</p>
+</div>	
+</body>
+</html>
+
+<script>
+	var app = angular.module('myApp',[]);
+	app.controller('myCtrl' , function($scope) {
+		$scope.weight = 4;
+		$scope.height = 2;
+
+		$scope.KMI = function () {
+			return $scope.weight;
+        };
+	});
+</script>
